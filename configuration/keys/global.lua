@@ -38,7 +38,8 @@ local globalKeys =
     {modkey},
     'r',
     function()
-      awful.spawn('rofi -combi-modi window,drun -show combi -modi combi')
+      -- awful.spawn('rofi -combi-modi window,drun -show combi -modi combi')
+      awful.spawn(apps.default.rofi)
     end,
     {description = 'Main menu', group = 'awesome'}
   ),
@@ -46,7 +47,8 @@ local globalKeys =
     {altkey},
     'space',
     function()
-      awful.spawn('rofi -combi-modi window,drun -show combi -modi combi')
+      -- awful.spawn('rofi -combi-modi window,drun -show combi -modi combi')
+      awful.spawn(apps.default.rofi)
     end,
     {description = 'Show main menu', group = 'awesome'}
   ),
@@ -385,15 +387,17 @@ local globalKeys =
     'g',
     function()
       awful.util.spawn_with_shell('lutris')
-    end
+    end,
+    { description = 'lutris', group = 'hotkeys'}
   ),
   -- System Monitor hotkey
   awful.key(
     {modkey},
     'm',
     function()
-      awful.util.spawn_with_shell('mate-system-monitor')
-    end
+      awful.util.spawn_with_shell('spotify')
+    end,
+    { description = 'spotify', group = 'hotkeys'}
   ),
   -- Kill VLC
   awful.key(

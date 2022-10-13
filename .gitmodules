@@ -1,0 +1,3 @@
+[submodule "awesome-wm-widgets"]
+	path = awesome-wm-widgets
+	url = ./awesome-wm-widgets

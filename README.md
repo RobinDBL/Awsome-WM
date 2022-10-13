@@ -1,5 +1,14 @@
 ## Material and Mouse driven theme for [AwesomeWM 4.3](https://awesomewm.org/)
 ### Original design by PapyElGringo, I modified it removing sidebar and condensing the bars to a single top panel. 
+#### Forked from https://github.com/ChrisTitusTech/titus-awesome, even more modified by RobinDBL
+
+Note: Modifications by RobinDBL include: 
+- Spotify player widget
+- extenal audio config widget
+- battery widget
+- 24h-clock
+- Changed some default apps
+- Changed some chortcuts
 
 Note: This fork focuses on streamlining the config and adding some Quality of Life touches to the theme.
 

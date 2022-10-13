@@ -9,6 +9,10 @@ local mat_icon_button = require('widget.material.icon-button')
 local mat_icon = require('widget.material.icon')
 local dpi = require('beautiful').xresources.apply_dpi
 local icons = require('theme.icons')
+-- https://github.com/streetturtle/awesome-wm-widgets
+local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
+local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 
 -- Titus - Horizontal Tray
 local systray = wibox.widget.systray()
@@ -17,9 +21,9 @@ local systray = wibox.widget.systray()
   systray.forced_height = 20
 
   -- Clock / Calendar 24h format
--- local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%d.%m.%Y\n     %H:%M</span>')
+local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%H:%M</span>')
 -- Clock / Calendar 12AM/PM fornat
-local textclock = wibox.widget.textclock('<span font="Roboto Mono 12">%I:%M %p</span>')
+--local textclock = wibox.widget.textclock('<span font="Roboto Mono 12">%I:%M %p</span>')
 -- textclock.forced_height = 36
 
 -- Add a calendar (credits to kylekewley for the original code)
@@ -29,6 +33,7 @@ local month_calendar = awful.widget.calendar_popup.month({
   week_numbers = true
 })
 month_calendar:attach(textclock)
+
 
 local clock_widget = wibox.container.margin(textclock, dpi(13), dpi(13), dpi(9), dpi(8))
 
@@ -124,12 +129,24 @@ local TopPanel = function(s)
         -- Create a taglist widget
         TagList(s),
         TaskList(s),
-        add_button
+        add_button,
       },
       nil,
       {
+        -- spotify
+        spotify_widget({
+              font = 'Ubuntu Mono 9',
+              dim_when_paused = true,
+              dim_opacity = 0.5,
+              max_length = -1,
+              show_tooltip = true
+            }),
         layout = wibox.layout.fixed.horizontal,
         wibox.container.margin(systray, dpi(3), dpi(3), dpi(6), dpi(3)),
+        -- Volume widget
+        volume_widget(),
+        -- Battery widget
+        battery_widget(),
         -- Layout box
         LayoutBox(s),
         -- Clock
