@@ -351,11 +351,30 @@ local globalKeys =
     {description = 'toggle mute', group = 'hotkeys'}
   ),
   -- Screen management
+  -- Move window to next screen
   awful.key(
     {modkey},
     'o',
     awful.client.movetoscreen,
     {description = 'move window to next screen', group = 'client'}
+  ),
+  -- Move cursor to next screen
+  awful.key(
+    {modkey},
+    'Tab',
+    function ()
+      awful.screen.focus_relative(1)
+    end,
+    {description = 'Move focus to next screen', group = 'hotkeys'}
+  ),
+  -- Move cursor to previous screen
+  awful.key(
+    {modkey, 'Shift'},
+    'Tab',
+    function ()
+      awful.screen.focus_relative(-1)
+    end,
+    {description = 'Move focus to previous screen', group = 'hotkeys'}
   ),
   -- Open default program for tag
   awful.key(

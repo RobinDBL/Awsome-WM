@@ -23,12 +23,6 @@ local tags = {
     screen = 1
   },
   {
-    icon = icons.game,
-    type = 'game',
-    defaultApp = apps.default.game,
-    screen = 1
-  },
-  {
     icon = icons.folder,
     type = 'files',
     defaultApp = apps.default.files,
@@ -44,6 +38,12 @@ local tags = {
     icon = icons.lab,
     type = 'any',
     defaultApp = apps.default.rofi,
+    screen = 1
+  },
+  {
+    icon = icons.game,
+    type = 'game',
+    defaultApp = apps.default.game,
     screen = 1
   }
 }
