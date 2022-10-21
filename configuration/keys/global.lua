@@ -350,6 +350,30 @@ local globalKeys =
     end,
     {description = 'toggle mute', group = 'hotkeys'}
   ),
+  awful.key(
+    {},
+    'XF86AudioPlay',
+    function ()
+      awful.spawn('sp play')      
+    end,
+    {description = '[spotify only]toggle play/pause', group = 'hotkeys'}
+  ),
+  awful.key(
+    {},
+    'XF86AudioNext',
+    function ()
+      awful.spawn('sp next')      
+    end,
+    {description = '[spotify only]toggle next track', group = 'hotkeys'}
+  ),
+  awful.key(
+    {},
+    'XF86AudioPrev',
+    function ()
+      awful.spawn('sp prev')      
+    end,
+    {description = '[spotify only]toggle previous track', group = 'hotkeys'}
+  ),
   -- Screen management
   -- Move window to next screen
   awful.key(
