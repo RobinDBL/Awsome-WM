@@ -13,7 +13,7 @@ return {
     lock = 'i3lock-fancy',
     quake = 'konsole',
     screenshot = 'flameshot screen -p ~/Pictures',
-    region_screenshot = 'flameshot gui -p ~/Pictures',
+    region_screenshot = 'flameshot gui -p ~/Pictures/screenshots --clipboard',
     delayed_screenshot = 'flameshot screen -p ~/Pictures -d 5000',
     browser = 'firefox',
     editor = 'code', -- gui text editor
@@ -36,6 +36,9 @@ return {
      -- 'steam -silent',
     'feh --randomize --bg-fill ~/.wallpapers/*',
     '/usr/bin/variety',
+    'teams',
+    'firefox',
+    'prospect-mail',
     -- Add applications that need to be killed between reloads
     -- to avoid multipled instances, inside the awspawn script
     '~/.config/awesome/configuration/awspawn' -- Spawn "dirty" apps that can linger between sessions

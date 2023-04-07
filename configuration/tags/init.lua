@@ -17,6 +17,12 @@ local tags = {
     screen = 1
   },
   {
+    icon = icons.terminal,
+    type = 'terminal',
+    defaultApp = apps.default.terminal,
+    screen = 1
+  },
+  {
     icon = icons.social,
     type = 'social',
     defaultApp = apps.default.social,

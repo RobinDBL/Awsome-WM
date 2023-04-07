@@ -13,6 +13,8 @@ local icons = require('theme.icons')
 local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+local todo_widget = require("awesome-wm-widgets.todo-widget.todo")
+
 
 -- Titus - Horizontal Tray
 local systray = wibox.widget.systray()
@@ -143,6 +145,8 @@ local TopPanel = function(s)
             }),
         layout = wibox.layout.fixed.horizontal,
         wibox.container.margin(systray, dpi(3), dpi(3), dpi(6), dpi(3)),
+        -- todo widget
+        todo_widget(),
         -- Volume widget
         volume_widget(),
         -- Battery widget

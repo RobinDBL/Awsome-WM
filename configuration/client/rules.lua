@@ -44,5 +44,58 @@ awful.rules.rules = {
       end,
       skip_decoration = true
     }
-  }
+  },
+  -- Set rules to open certain apps on certain screens and certain workspaces
+  {
+    rule = { class = "firefox" },
+    properties = { tag = "1" }
+  },
+  {
+    rule ={ instance = "code" },
+    properties = { tag = "2" }
+  },
+  {
+    rule = { class = "konsole" },
+    properties = { tag = "3" }
+  },
+  {
+    rule = { instance = "teams" },
+    properties = { tag = "4"},
+  },
+  {
+    rule = { name = "Mail - Robin Deblauwe - Outlook" },
+    properties = { tag = "4"},
+  },
+  {
+    rule = { name = "Rambox" },
+    properties = { tag = "4"},
+  },
+  {
+    rule = { instance = "Nautilus" },
+    properties = { tag = "5" }
+  },
+  {
+    rule = { instance = "spotify" },
+    properties = { tag = "6"},
+  },
+  {
+    rule = { name = "Variety Preferences" },
+    properties = { minimized = true, tag = "7" },
+  },
+  {	
+    id = "teams_notification",
+    rule_any = {
+       name = { "Microsoft Teams Notification" },
+     },	
+    properties = {
+       titlebars_enabled = false,
+       floating = true,	
+       focus = false,
+       draw_backdrop = false,
+       skip_decoration = true,
+       skip_taskbar = true,
+       ontop = true,
+       sticky = true
+    }
+  },
 }

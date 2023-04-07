@@ -54,7 +54,7 @@ local globalKeys =
   ),
   awful.key(
     {modkey, 'Shift'},
-    'r',
+    ']',
     function()
       awful.spawn('reboot')
     end,
@@ -111,12 +111,20 @@ local globalKeys =
     {description = 'Lock the screen', group = 'awesome'}
   ),
   awful.key(
-    {modkey},
+    {},
     'Print',
     function()
-      awful.util.spawn_with_shell(apps.default.delayed_screenshot)
+      awful.util.spawn_with_shell(apps.default.region_screenshot)
     end,
-    {description = 'Mark an area and screenshot it 10 seconds later (clipboard)', group = 'screenshots (clipboard)'}
+    {description = 'Mark an area and screenshot it to your clipboard', group = 'screenshots (clipboard)'}
+  ),
+  awful.key(
+    {modkey, 'Shift'},
+    's',
+    function()
+      awful.util.spawn_with_shell(apps.default.region_screenshot)
+    end,
+    {description = 'Mark an area and screenshot it to your clipboard', group = 'screenshots (clipboard)'}
   ),
   awful.key(
     {modkey},
@@ -130,9 +138,9 @@ local globalKeys =
     {altkey, 'Shift'},
     'p',
     function()
-      awful.util.spawn_with_shell(apps.default.region_screenshot)
+      awful.util.spawn_with_shell(apps.default.delayed_screenshot)
     end,
-    {description = 'Mark an area and screenshot it to your clipboard', group = 'screenshots (clipboard)'}
+    {description = 'Mark an area and screenshot it 10 seconds later (clipboard)', group = 'screenshots (clipboard)'}
   ),
   awful.key(
     {modkey},
