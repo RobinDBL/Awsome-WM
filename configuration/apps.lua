@@ -35,7 +35,7 @@ return {
      -- 'synology-drive -minimized',
      -- 'steam -silent',
     'feh --randomize --bg-fill ~/.wallpapers/*',
-    '/usr/bin/variety',
+    '/usr/bin/variety -q',
     'teams',
     'firefox',
     'prospect-mail',

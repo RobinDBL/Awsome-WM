@@ -48,11 +48,20 @@ awful.rules.rules = {
   -- Set rules to open certain apps on certain screens and certain workspaces
   {
     rule = { class = "firefox" },
-    properties = { tag = "1" }
+    properties = { tag = "1", screen = function()
+      if screen.count() == 3 then
+        return 3
+      else if screen.count() == 2 then
+        return 2
+      else
+        return 1
+      end
+      end
+    end }
   },
   {
     rule ={ instance = "code" },
-    properties = { tag = "2" }
+    properties = { tag = "2", screen = 1}
   },
   {
     rule = { class = "konsole" },
@@ -60,15 +69,34 @@ awful.rules.rules = {
   },
   {
     rule = { instance = "teams" },
-    properties = { tag = "4"},
+    properties = { tag = "4", screen = 1},
   },
   {
     rule = { name = "Mail - Robin Deblauwe - Outlook" },
-    properties = { tag = "4"},
+    properties = { tag = "4", screen = function()
+    if screen.count() == 3 then
+      return 2
+    else if screen.count() == 2 then
+      return 2
+    else
+      return 1
+    end
+    end
+  end
+  },
   },
   {
     rule = { name = "Rambox" },
-    properties = { tag = "4"},
+    properties = { tag = "4", screen = function()
+      if screen.count() == 3 then
+        return 3
+      else if screen.count() == 2 then
+        return 2
+      else
+        return 1
+      end
+      end
+    end},
   },
   {
     rule = { instance = "Nautilus" },
