@@ -1,4 +1,5 @@
 local awful = require('awful')
+local naughty = require('naughty')
 require('awful.autofocus')
 local beautiful = require('beautiful')
 local hotkeys_popup = require('awful.hotkeys_popup').widget
@@ -49,6 +50,7 @@ local globalKeys =
     function()
       -- awful.spawn('rofi -combi-modi window,drun -show combi -modi combi')
       awful.spawn(apps.default.rofi)
+      -- awful.spawn('ulauncher')
     end,
     {description = 'Show main menu', group = 'awesome'}
   ),
@@ -263,14 +265,14 @@ local globalKeys =
     {description = 'restore minimized', group = 'client'}
   ),
   -- Dropdown application
-  awful.key(
-    {modkey},
-    'z',
-    function()
-      _G.toggle_quake()
-    end,
-    {description = 'dropdown application', group = 'launcher'}
-  ),
+  -- awful.key(
+  --   {modkey},
+  --   'z',
+  --   function()
+  --     _G.toggle_quake()
+  --   end,
+  --   {description = 'dropdown application', group = 'launcher'}
+  -- ),
   -- Widgets popups
   --[[awful.key(
     {altkey},
@@ -362,31 +364,35 @@ local globalKeys =
     {},
     'XF86AudioPlay',
     function ()
-      awful.spawn('sp play')      
+      -- awful.spawn('sp play')      
+      awful.spawn('playerctl play-pause')
+      -- naughty.notify({text = 'Playing'}) -- see https://elv13.github.io/libraries/naughty.html#notify
     end,
-    {description = '[spotify only]toggle play/pause', group = 'hotkeys'}
+    {description = 'toggle play/pause', group = 'hotkeys'}
   ),
   awful.key(
     {},
     'XF86AudioNext',
     function ()
-      awful.spawn('sp next')      
+      -- awful.spawn('sp next')      
+      awful.spawn('playerctl next')
     end,
-    {description = '[spotify only]toggle next track', group = 'hotkeys'}
+    {description = 'toggle next track', group = 'hotkeys'}
   ),
   awful.key(
     {},
     'XF86AudioPrev',
     function ()
-      awful.spawn('sp prev')      
+      -- awful.spawn('sp prev')      
+      awful.spawn('playerctl previous')
     end,
-    {description = '[spotify only]toggle previous track', group = 'hotkeys'}
+    {description = 'toggle previous track', group = 'hotkeys'}
   ),
   -- Screen management
   -- Move window to next screen
   awful.key(
     {modkey},
-    'o',
+    'z',
     awful.client.movetoscreen,
     {description = 'move window to next screen', group = 'client'}
   ),

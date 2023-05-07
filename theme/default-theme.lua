@@ -18,6 +18,7 @@ theme.accent = mat_colors.pink
 -- Background
 theme.background = mat_colors.grey
 
+
 local awesome_overrides =
   function(theme)
   theme.dir = os.getenv('HOME') .. '/.config/awesome/theme'
@@ -40,7 +41,7 @@ local awesome_overrides =
 
   -- Borders
 
-  theme.border_width = dpi(2)
+  theme.border_width = dpi(3)
   theme.border_normal = theme.background.hue_800
   theme.border_focus = theme.primary.hue_300
   theme.border_marked = '#CC9393'
@@ -98,7 +99,7 @@ local awesome_overrides =
   theme.icon_theme = 'Papirus-Dark'
 
   --Client
-  theme.border_width = dpi(2)
+  theme.border_width = dpi(7)
   theme.border_focus = theme.primary.hue_500
   theme.border_normal = theme.background.hue_800
 end

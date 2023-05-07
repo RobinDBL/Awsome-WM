@@ -15,7 +15,12 @@ function updateBarsVisibility()
     if s.selected_tag then
       local fullscreen = s.selected_tag.fullscreenMode
       -- Order matter here for shadow
-      s.top_panel.visible = not fullscreen
+      s.top_panel.visible = not fullscreen -- top panel visible except for fullscreen
+      -- s.top_panel.visible = true -- Top panel always visible, also in fullscreen
+      if fulscreen then 
+        awful.screen.padding(screen[s], {top=28})
+      end
+
     end
   end
 end

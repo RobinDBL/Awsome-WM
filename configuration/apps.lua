@@ -10,7 +10,7 @@ return {
   default = {
     terminal = 'konsole',
     rofi = rofi_command,
-    lock = 'i3lock-fancy',
+    lock = 'betterlockscreen -l blur',
     quake = 'konsole',
     screenshot = 'flameshot screen -p ~/Pictures',
     region_screenshot = 'flameshot gui -p ~/Pictures/screenshots --clipboard',
@@ -20,7 +20,7 @@ return {
     social = 'teams',
     game = rofi_command,
     files = 'nautilus',
-    music = rofi_command 
+    music = 'spotify' 
   },
   -- List of apps to start once on start-up
   run_on_start_up = {
@@ -35,8 +35,9 @@ return {
      -- 'synology-drive -minimized',
      -- 'steam -silent',
     'feh --randomize --bg-fill ~/.wallpapers/*',
-    '/usr/bin/variety -q',
+    '/usr/bin/variety',
     'teams',
+    'playerctld daemon',
     'firefox',
     'prospect-mail',
     -- Add applications that need to be killed between reloads

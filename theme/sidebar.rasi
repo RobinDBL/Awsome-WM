@@ -42,10 +42,10 @@
     highlight:     bold #ffffff;
 }
 window {
-    height:   100%;
+    height:   50%;
     width: 30em;
-    location: west;
-    anchor:   west;
+    location: center;
+    anchor:   center;
     border:  0px 2px 0px 0px;
     text-color: @lightwhite;
 }

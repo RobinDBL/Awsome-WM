@@ -9,11 +9,14 @@ local mat_icon_button = require('widget.material.icon-button')
 local mat_icon = require('widget.material.icon')
 local dpi = require('beautiful').xresources.apply_dpi
 local icons = require('theme.icons')
+local theme = require('theme')
 -- https://github.com/streetturtle/awesome-wm-widgets
 local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 local todo_widget = require("awesome-wm-widgets.todo-widget.todo")
+local docker_widget = require("awesome-wm-widgets.docker-widget.docker")
+
 
 
 -- Titus - Horizontal Tray
@@ -59,6 +62,24 @@ add_button:buttons(
   )
 )
 
+-- for s in screen do
+--   if awful.screen.focused() then
+--     -- Select the correct color using theme.something
+--     -- theme.background.hue_50 = '#ECEFF1'
+--     -- theme.background.hue_100 = '#CFD8DC'
+--     -- theme.background.hue_200 = '#B0BEC5'
+--     -- theme.background.hue_300 = '#90A4AE'
+--     -- theme.background.hue_400 = '#78909C'
+--     -- theme.background.hue_500 = '#607D8B'
+--     -- theme.background.hue_600 = '#546E7A'
+--     -- theme.background.hue_700 = '#455A64'
+--     -- theme.background.hue_800 = '#37474F'
+--     -- theme.background.hue_900 = '#263238'
+--     -- theme.background.hue_800 = '#FF0000'
+--   end
+-- end
+  
+
 -- Create an imagebox widget which will contains an icon indicating which layout we're using.
 -- We need one layoutbox per screen.
 local LayoutBox = function(s)
@@ -103,7 +124,7 @@ local TopPanel = function(s)
     local panel =
     wibox(
     {
-      ontop = true,
+      ontop = false,
       screen = s,
       height = dpi(32),
       width = s.geometry.width,
@@ -130,21 +151,25 @@ local TopPanel = function(s)
         layout = wibox.layout.fixed.horizontal,
         -- Create a taglist widget
         TagList(s),
-        TaskList(s),
-        add_button,
+        -- application list
+        --TaskList(s),
+        --add_button,
       },
       nil,
+      --wibox.container.place(nil, "center", "center", false, false, false, false, nil, nil, 0, false),
       {
         -- spotify
         spotify_widget({
-              font = 'Ubuntu Mono 9',
-              dim_when_paused = true,
-              dim_opacity = 0.5,
-              max_length = -1,
-              show_tooltip = true
-            }),
+          font = 'Ubuntu Mono 9',
+          dim_when_paused = true,
+          dim_opacity = 0.5,
+          max_length = -1,
+          show_tooltip = true
+        }),
         layout = wibox.layout.fixed.horizontal,
         wibox.container.margin(systray, dpi(3), dpi(3), dpi(6), dpi(3)),
+        -- docker widget
+        docker_widget(),
         -- todo widget
         todo_widget(),
         -- Volume widget

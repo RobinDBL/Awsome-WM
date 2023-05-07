@@ -9,7 +9,8 @@ local clientKeys =
     {modkey},
     'f',
     function(c)
-      c.fullscreen = not c.fullscreen
+      -- c.fullscreen = not c.fullscreen -- Fullscreen will cover the wibar on top
+      c.maximized = not c.maximized -- maximized will not cover the wibar on top
       c:raise()
     end,
     {description = 'toggle fullscreen', group = 'client'}
