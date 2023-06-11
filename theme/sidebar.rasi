@@ -4,7 +4,11 @@
  */
 * {
     text-color:  #ffeedd;
-    background-color:  rgba(0,0,0,0);
+    //background-color:  rgba(0,0,0,0);
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px; 
+    spacing: 0px;
     dark: #121e25;
     // Black
     black:       #3d352a;
@@ -40,14 +44,16 @@
     //
     // Bold, Italic, Underline
     highlight:     bold #ffffff;
+    //border-radius: 24px;
 }
 window {
     height:   50%;
     width: 30em;
     location: center;
     anchor:   center;
-    border:  0px 2px 0px 0px;
+    border:  0px 0px 0px 0px;
     text-color: @lightwhite;
+    border-radius: 24px;  
 }
 
 mode-switcher {
@@ -62,19 +68,38 @@ button selected {
 inputbar {
     background-color: @lightblack;
     text-color: @lightgreen;
-    padding: 4px;
+    padding: 8px 16px;
     border: 0px 0px 4px 0px;
+    margin: 10px 10px;
+    border-radius: 16px;
+}
+
+entry{
+    placeholder: "Search";
+    placeholder-color: @blue;
 }
 mainbox {
     expand: true;
     background-color: #121e25;
     spacing: 1em;
+    padding: 12px;
 }
 listview {
-    padding: 0em 0.4em 4em 1em;
+    //padding: 0em 0.4em 0.4em 1em;
     dynamic: false;
     lines: 0;
 }
+
+element {
+    padding: 8px 16px;
+    spacing: 8px;
+    border-radius: 16px;
+}
+
+textbox {
+    padding: 8px 24px;
+}
+
 element selected  normal {
     background-color: @lightblue;
 }

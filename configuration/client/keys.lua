@@ -13,6 +13,15 @@ local clientKeys =
       c.maximized = not c.maximized -- maximized will not cover the wibar on top
       c:raise()
     end,
+    {description = 'toggle maximized screen', group = 'client'}
+  ),
+  awful.key(
+    {modkey, 'Shift'},
+    'f',
+    function(c)
+      c.fullscreen = not c.fullscreen
+      c:raise()
+    end,
     {description = 'toggle fullscreen', group = 'client'}
   ),
   awful.key(

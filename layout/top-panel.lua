@@ -24,6 +24,7 @@ local systray = wibox.widget.systray()
   systray:set_horizontal(true)
   systray:set_base_size(20)
   systray.forced_height = 20
+  --systray:set_screen(s)
 
   -- Clock / Calendar 24h format
 local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%H:%M</span>')
@@ -37,7 +38,7 @@ local month_calendar = awful.widget.calendar_popup.month({
   start_sunday = false,
   week_numbers = true
 })
-month_calendar:attach(textclock)
+month_calendar:attach(textclock, "tc")
 
 
 local clock_widget = wibox.container.margin(textclock, dpi(13), dpi(13), dpi(9), dpi(8))
@@ -61,23 +62,6 @@ add_button:buttons(
     )
   )
 )
-
--- for s in screen do
---   if awful.screen.focused() then
---     -- Select the correct color using theme.something
---     -- theme.background.hue_50 = '#ECEFF1'
---     -- theme.background.hue_100 = '#CFD8DC'
---     -- theme.background.hue_200 = '#B0BEC5'
---     -- theme.background.hue_300 = '#90A4AE'
---     -- theme.background.hue_400 = '#78909C'
---     -- theme.background.hue_500 = '#607D8B'
---     -- theme.background.hue_600 = '#546E7A'
---     -- theme.background.hue_700 = '#455A64'
---     -- theme.background.hue_800 = '#37474F'
---     -- theme.background.hue_900 = '#263238'
---     -- theme.background.hue_800 = '#FF0000'
---   end
--- end
   
 
 -- Create an imagebox widget which will contains an icon indicating which layout we're using.
@@ -151,13 +135,22 @@ local TopPanel = function(s)
         layout = wibox.layout.fixed.horizontal,
         -- Create a taglist widget
         TagList(s),
+        fg = beautiful.background.hue_900,
+        bg = beautiful.background.hue_900
+        
         -- application list
         --TaskList(s),
         --add_button,
       },
-      nil,
       --wibox.container.place(nil, "center", "center", false, false, false, false, nil, nil, 0, false),
       {
+        clock_widget,
+        valign = "center",
+        halign = "center",
+        layout = wibox.container.place
+      },
+      {
+        layout = wibox.layout.fixed.horizontal,
         -- spotify
         spotify_widget({
           font = 'Ubuntu Mono 9',
@@ -166,7 +159,6 @@ local TopPanel = function(s)
           max_length = -1,
           show_tooltip = true
         }),
-        layout = wibox.layout.fixed.horizontal,
         wibox.container.margin(systray, dpi(3), dpi(3), dpi(6), dpi(3)),
         -- docker widget
         docker_widget(),
@@ -179,8 +171,7 @@ local TopPanel = function(s)
         -- Layout box
         LayoutBox(s),
         -- Clock
-        clock_widget,
-      }
+      },
     }
 
   return panel

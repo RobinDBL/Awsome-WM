@@ -365,8 +365,8 @@ local globalKeys =
     'XF86AudioPlay',
     function ()
       -- awful.spawn('sp play')      
+      naughty.notify({text = 'Toggled play/pause for the current media player'}) -- see https://elv13.github.io/libraries/naughty.html#notify
       awful.spawn('playerctl play-pause')
-      -- naughty.notify({text = 'Playing'}) -- see https://elv13.github.io/libraries/naughty.html#notify
     end,
     {description = 'toggle play/pause', group = 'hotkeys'}
   ),
@@ -443,7 +443,7 @@ local globalKeys =
     {modkey},
     'g',
     function()
-      awful.util.spawn_with_shell('lutris')
+      naughty.notify{ text = client.focus.border_color }
     end,
     { description = 'lutris', group = 'hotkeys'}
   ),
