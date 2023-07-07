@@ -16,6 +16,7 @@ local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 local todo_widget = require("awesome-wm-widgets.todo-widget.todo")
 local docker_widget = require("awesome-wm-widgets.docker-widget.docker")
+local apt_widget = require("awesome-wm-widgets.apt-widget.apt-widget")
 
 
 
@@ -36,7 +37,7 @@ local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%H:%M<
 local month_calendar = awful.widget.calendar_popup.month({
   screen = s,
   start_sunday = false,
-  week_numbers = true
+  week_numbers = false
 })
 month_calendar:attach(textclock, "tc")
 
@@ -136,10 +137,10 @@ local TopPanel = function(s)
         -- Create a taglist widget
         TagList(s),
         fg = beautiful.background.hue_900,
-        bg = beautiful.background.hue_900
+        bg = beautiful.background.hue_900,
         
         -- application list
-        --TaskList(s),
+        -- TaskList(s),
         --add_button,
       },
       --wibox.container.place(nil, "center", "center", false, false, false, false, nil, nil, 0, false),
@@ -160,6 +161,8 @@ local TopPanel = function(s)
           show_tooltip = true
         }),
         wibox.container.margin(systray, dpi(3), dpi(3), dpi(6), dpi(3)),
+        -- List of updates
+        apt_widget(),
         -- docker widget
         docker_widget(),
         -- todo widget

@@ -108,7 +108,15 @@ awful.rules.rules = {
   },
   {
     rule = { name = "Variety Preferences" },
-    properties = { minimized = true, tag = "7" },
+    properties = { minimized = false, tag = "7" },
+  },
+  {
+    rule = { instance = "virt-manager" },
+    properties = { tag = "7"},
+  },
+  {
+    rule = { instance = "virt-viewer" },
+    properties = { tag = "7"},
   },
   {	
     id = "teams_notification",
