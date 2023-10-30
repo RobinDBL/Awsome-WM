@@ -15,9 +15,9 @@ return {
     screenshot = 'flameshot screen -p ~/Pictures',
     region_screenshot = 'flameshot gui -p ~/Pictures/screenshots --clipboard',
     delayed_screenshot = 'flameshot screen -p ~/Pictures -d 5000',
-    browser = 'firefox',
+    browser = 'vivaldi',
     editor = 'code', -- gui text editor
-    social = 'teams',
+    social = 'teams-for-linux',
     game = rofi_command,
     files = 'nautilus',
     music = 'spotify' 
@@ -36,9 +36,10 @@ return {
      -- 'steam -silent',
     'feh --randomize --bg-fill ~/.wallpapers/*',
     '/usr/bin/variety',
-    'teams',
+    -- 'google-chrome --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo',
+    'teams-for-linux',
     'playerctld daemon',
-    'firefox',
+    -- 'vivaldi',
     'prospect-mail',
     -- Add applications that need to be killed between reloads
     -- to avoid multipled instances, inside the awspawn script

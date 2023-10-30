@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-HOST='https://api.bitbucket.org'
+HOST='https://bitbucket.televic.com/rest/api'
 ACCOUNT_ID=''
 WORKSPACE=''
 REPO_SLUG=''

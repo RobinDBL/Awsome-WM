@@ -60,6 +60,19 @@ awful.rules.rules = {
     end }
   },
   {
+    rule = { class = "Vivaldi" },
+    properties = { tag = "1", screen = function()
+      if screen.count() == 3 then
+        return 3
+      else if screen.count() == 2 then
+        return 2
+      else
+        return 1
+      end
+      end
+    end }
+  },
+  {
     rule ={ instance = "code" },
     properties = { tag = "2", screen = 1}
   },
@@ -72,10 +85,14 @@ awful.rules.rules = {
     properties = { tag = "4", screen = 1},
   },
   {
+    rule = { instance = "crx_cifhbcnohmdccbgoicgdjpfamggdegmo" }, -- ms teams chrome web app
+    properties = { tag = "4", screen = 1},
+  },
+  {
     rule = { name = "Mail - Robin Deblauwe - Outlook" },
     properties = { tag = "4", screen = function()
     if screen.count() == 3 then
-      return 2
+      return 3
     else if screen.count() == 2 then
       return 2
     else
@@ -118,14 +135,14 @@ awful.rules.rules = {
     rule = { instance = "virt-viewer" },
     properties = { tag = "7"},
   },
-  {	
+  {
     id = "teams_notification",
     rule_any = {
        name = { "Microsoft Teams Notification" },
-     },	
+     },
     properties = {
        titlebars_enabled = false,
-       floating = true,	
+       floating = true,
        focus = false,
        draw_backdrop = false,
        skip_decoration = true,
@@ -134,4 +151,8 @@ awful.rules.rules = {
        sticky = true
     }
   },
+  {
+    rule = { name = "nvim ."},
+    properties = { tag = "2" }
+  }
 }
