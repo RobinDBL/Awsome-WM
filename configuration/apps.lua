@@ -15,7 +15,7 @@ return {
     screenshot = 'flameshot screen -p ~/Pictures',
     region_screenshot = 'flameshot gui -p ~/Pictures/screenshots --clipboard',
     delayed_screenshot = 'flameshot screen -p ~/Pictures -d 5000',
-    browser = 'vivaldi',
+    browser = 'firefox',
     editor = 'code', -- gui text editor
     social = 'teams-for-linux',
     game = rofi_command,
@@ -43,6 +43,7 @@ return {
     'prospect-mail',
     -- Add applications that need to be killed between reloads
     -- to avoid multipled instances, inside the awspawn script
-    '~/.config/awesome/configuration/awspawn' -- Spawn "dirty" apps that can linger between sessions
+    '~/.config/awesome/configuration/awspawn', -- Spawn "dirty" apps that can linger between sessions
+    '/bin/touchpad.sh'
   }
 }

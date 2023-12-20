@@ -27,7 +27,7 @@ local systray = wibox.widget.systray()
 systray:set_horizontal(true)
 systray:set_base_size(20)
 systray.forced_height = 20
---systray:set_screen(s)
+--systray:set_screen()
 
 -- Clock / Calendar 24h format
 local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%H:%M</span>')
@@ -104,7 +104,7 @@ local TopPanel = function(s)
 			bg = beautiful.background.hue_900,
 
 			-- application list
-			-- TaskList(s),
+			--TaskList(s),
 			--add_button,
 		},
 		--wibox.container.place(nil, "center", "center", false, false, false, false, nil, nil, 0, false),
@@ -113,6 +113,7 @@ local TopPanel = function(s)
 			valign = "center",
 			halign = "center",
 			layout = wibox.container.place,
+            --layout = wibox.layout.fixed.horizontal
 		},
 		{
 			layout = wibox.layout.fixed.horizontal,
@@ -127,15 +128,15 @@ local TopPanel = function(s)
 			}),
 			wibox.container.margin(systray, dpi(3), dpi(3), dpi(6), dpi(3)),
 			-- List of updates
-			apt_widget(),
-			-- jira widget
-			jira_widget({
-				host = "https://jira.televic.com",
-				--query = 'jql=project = THCS_GENERAL AND sprint in openSprints () AND resolution = Unresolved AND (assignee in (currentUser()) OR ("reviewers" in (currentUser())) AND "Has reviewed" in (EMPTY)) ORDER BY updated DESC',
-				-- jql=project=THCS_GENERAL AND sprint in openSprints() AND resolution = Unresolved AND assignee in (currentUser())
-				query = 'jql=project=THCS_GENERAL AND sprint in openSprints() AND resolution = Unresolved AND ( assignee in (currentUser()) OR ( "reviewers" in (currentUser()))  ) ORDER BY updated DESC',
-				--query = 'jql=project=THCS_GENERAL'
-			}),
+			--apt_widget(),
+			-- -- jira widget
+			-- jira_widget({
+			-- 	host = "https://jira.televic.com",
+			-- 	--query = 'jql=project = THCS_GENERAL AND sprint in openSprints () AND resolution = Unresolved AND (assignee in (currentUser()) OR ("reviewers" in (currentUser())) AND "Has reviewed" in (EMPTY)) ORDER BY updated DESC',
+			-- 	-- jql=project=THCS_GENERAL AND sprint in openSprints() AND resolution = Unresolved AND assignee in (currentUser())
+			-- 	query = 'jql=project=THCS_GENERAL AND sprint in openSprints() AND resolution = Unresolved AND ( assignee in (currentUser()) OR ( "reviewers" in (currentUser()))  ) ORDER BY updated DESC',
+			-- 	--query = 'jql=project=THCS_GENERAL'
+			-- }),
 			-- docker widget
 			docker_widget(),
 			cpu_widget(),

@@ -7,6 +7,7 @@ local playerctl_widget_text_title = wibox.widget.textbox()
 local playerctl_widget_play_icon = wibox.widget.imagebox()
 local play_icon = "/usr/share/icons/Arc/actions/24/player_play.png"
 local pause_icon = "/usr/share/icons/Arc/actions/24/player_pause.png"
+
 local playerctl_widget = wibox.widget({
 	wibox.widget({
 		widget = playerctl_widget_text_artist,
