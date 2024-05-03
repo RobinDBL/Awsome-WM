@@ -4,23 +4,24 @@ local filesystem = require('gears.filesystem')
 local with_dpi = require('beautiful').xresources.apply_dpi
 local get_dpi = require('beautiful').xresources.get_dpi
 -- local rofi_command = 'env /usr/bin/rofi -dpi ' .. get_dpi() .. ' -width ' .. with_dpi(400) .. ' -show drun -theme ' .. filesystem.get_configuration_dir() .. '/configuration/rofi.rasi -run-command "/bin/bash -c -i \'shopt -s expand_aliases; {cmd}\'"'
-local rofi_command = 'rofi -p "Search: " -combi-modi window,drun -show combi -modi combi -theme ~/.config/rofi/config.rasi'
+local rofi_command = 'rofi -p "Search: " -combi-modi window,drun, -show combi -modi combi -theme ~/.config/rofi/config.rasi'
 return {
   -- List of apps to start by default on some actions
   default = {
-    terminal = 'konsole',
+    terminal = 'alacritty',
     rofi = rofi_command,
     lock = 'betterlockscreen -l blur',
     quake = 'konsole',
     screenshot = 'flameshot screen -p ~/Pictures',
     region_screenshot = 'flameshot gui -p ~/Pictures/screenshots --clipboard',
     delayed_screenshot = 'flameshot screen -p ~/Pictures -d 5000',
-    browser = 'firefox',
-    editor = 'code', -- gui text editor
+    browser = 'vivaldi',
+    editor = 'neovim', -- gui text editor
     social = 'teams-for-linux',
     game = rofi_command,
     files = 'nautilus',
-    music = 'spotify' 
+    music = 'spotify',
+    monitor_management = 'arandr'
   },
   -- List of apps to start once on start-up
   run_on_start_up = {

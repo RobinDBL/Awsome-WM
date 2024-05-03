@@ -129,14 +129,15 @@ local TopPanel = function(s)
 			wibox.container.margin(systray, dpi(3), dpi(3), dpi(6), dpi(3)),
 			-- List of updates
 			--apt_widget(),
-			-- -- jira widget
-			-- jira_widget({
-			-- 	host = "https://jira.televic.com",
-			-- 	--query = 'jql=project = THCS_GENERAL AND sprint in openSprints () AND resolution = Unresolved AND (assignee in (currentUser()) OR ("reviewers" in (currentUser())) AND "Has reviewed" in (EMPTY)) ORDER BY updated DESC',
-			-- 	-- jql=project=THCS_GENERAL AND sprint in openSprints() AND resolution = Unresolved AND assignee in (currentUser())
-			-- 	query = 'jql=project=THCS_GENERAL AND sprint in openSprints() AND resolution = Unresolved AND ( assignee in (currentUser()) OR ( "reviewers" in (currentUser()))  ) ORDER BY updated DESC',
-			-- 	--query = 'jql=project=THCS_GENERAL'
-			-- }),
+			-- jira widget
+			jira_widget({
+				host = "https://televic-healthcare.atlassian.net",
+        -- Old jira.televic.com query
+				-- query = 'jql=project=GENERAL AND sprint in openSprints() AND resolution = Unresolved AND ( assignee in (currentUser()) OR ( "reviewers" in (currentUser()))  ) ORDER BY updated DESC',
+        -- New atlassian.net query
+        query = 'jql=project=GENERAL AND sprint in openSprints() AND ( assignee in (currentUser()) OR ( "reviewers" in (currentUser()))  ) AND status != Closed AND status != Done ORDER BY updated DESC'
+				--query = 'jql=project=THCS_GENERAL'
+			}),
 			-- docker widget
 			docker_widget(),
 			cpu_widget(),

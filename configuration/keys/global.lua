@@ -132,9 +132,9 @@ local globalKeys =
     {modkey},
     'p',
     function()
-      awful.util.spawn_with_shell(apps.default.screenshot)
+      awful.util.spawn_with_shell(apps.default.monitor_management)
     end,
-    {description = 'Take a screenshot of your active monitor and copy it to clipboard', group = 'screenshots (clipboard)'}
+    {description = 'Open the monitor management software', group = 'monitor management'}
   ),
   awful.key(
     {altkey, 'Shift'},

@@ -81,6 +81,10 @@ awful.rules.rules = {
     properties = { tag = "3" }
   },
   {
+    rule = { instance = "Alacritty" },
+    properties = { tag = "3" }
+  },
+  {
     rule = { instance = "teams" },
     properties = { tag = "4", screen = 1},
   },
@@ -121,7 +125,16 @@ awful.rules.rules = {
   },
   {
     rule = { instance = "spotify" },
-    properties = { tag = "6"},
+    properties = { tag = "6", screen = function()
+      if screen.count() == 3 then
+        return 3
+      else if screen.count() == 2 then
+        return 2
+      else
+        return 1
+      end
+      end
+    end }
   },
   {
     rule = { name = "Variety Preferences" },
@@ -153,6 +166,10 @@ awful.rules.rules = {
   },
   {
     rule = { name = "nvim ."},
-    properties = { tag = "2" }
+    properties = { tag = "2", screen = 1 }
+  },
+  {
+    rule = { name = "Excalidraw"},
+    properties = { tag = "7"}
   }
 }
