@@ -78,23 +78,23 @@ awful.rules.rules = {
   },
   {
     rule = { class = "konsole" },
-    properties = { tag = "3" }
+    properties = { tag = "2" }
   },
   {
     rule = { instance = "Alacritty" },
-    properties = { tag = "3" }
+    properties = { tag = "2" }
   },
   {
     rule = { instance = "teams" },
-    properties = { tag = "4", screen = 1},
+    properties = { tag = "3", screen = 1},
   },
   {
     rule = { instance = "crx_cifhbcnohmdccbgoicgdjpfamggdegmo" }, -- ms teams chrome web app
-    properties = { tag = "4", screen = 1},
+    properties = { tag = "3", screen = 1},
   },
   {
     rule = { name = "Mail - Robin Deblauwe - Outlook" },
-    properties = { tag = "4", screen = function()
+    properties = { tag = "3", screen = function()
     if screen.count() == 3 then
       return 3
     else if screen.count() == 2 then
@@ -108,7 +108,7 @@ awful.rules.rules = {
   },
   {
     rule = { name = "Rambox" },
-    properties = { tag = "4", screen = function()
+    properties = { tag = "3", screen = function()
       if screen.count() == 3 then
         return 3
       else if screen.count() == 2 then
@@ -121,11 +121,15 @@ awful.rules.rules = {
   },
   {
     rule = { instance = "Nautilus" },
-    properties = { tag = "5" }
+    properties = { tag = "4" }
+  },
+  {
+    rule = { name = "Thunar" },
+    properties = { tag = "4" }
   },
   {
     rule = { instance = "spotify" },
-    properties = { tag = "6", screen = function()
+    properties = { tag = "5", screen = function()
       if screen.count() == 3 then
         return 3
       else if screen.count() == 2 then
@@ -138,15 +142,15 @@ awful.rules.rules = {
   },
   {
     rule = { name = "Variety Preferences" },
-    properties = { minimized = false, tag = "7" },
+    properties = { minimized = false, tag = "6" },
   },
   {
     rule = { instance = "virt-manager" },
-    properties = { tag = "7"},
+    properties = { tag = "6"},
   },
   {
     rule = { instance = "virt-viewer" },
-    properties = { tag = "7"},
+    properties = { tag = "6"},
   },
   {
     id = "teams_notification",
@@ -170,6 +174,6 @@ awful.rules.rules = {
   },
   {
     rule = { name = "Excalidraw"},
-    properties = { tag = "7"}
+    properties = { tag = "6"}
   }
 }

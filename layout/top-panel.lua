@@ -20,7 +20,7 @@ local apt_widget = require("awesome-wm-widgets.apt-widget.apt-widget")
 local jira_widget = require("awesome-wm-widgets.jira-widget.jira")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 
--- local player_widget = require("widget.playerctl.playerctl")
+local player_widget = require("widget.playerctl.playerctl")
 
 -- Titus - Horizontal Tray
 local systray = wibox.widget.systray()
@@ -117,15 +117,24 @@ local TopPanel = function(s)
 		},
 		{
 			layout = wibox.layout.fixed.horizontal,
-			--player_widget,
+			player_widget{
+    play_icon = '/usr/share/icons/Arc/actions/24/player_play.png',
+    pause_icon = '/usr/share/icons/Arc/actions/24/player_pause.png',
+    dim_when_paused = true,
+    font = "Ubuntu Mono 9",
+    dim_opacity = 0.5,
+    max_length = -1,
+    show_tooltip = true,
+    bg = ""
+      },
 			-- spotify
-			spotify_widget({
-				font = "Ubuntu Mono 9",
-				dim_when_paused = true,
-				dim_opacity = 0.5,
-				max_length = -1,
-				show_tooltip = true,
-			}),
+			-- spotify_widget({
+			-- 	font = "Ubuntu Mono 9",
+			-- 	dim_when_paused = true,
+			-- 	dim_opacity = 0.5,
+			-- 	max_length = -1,
+			-- 	show_tooltip = true,
+			-- }),
 			wibox.container.margin(systray, dpi(3), dpi(3), dpi(6), dpi(3)),
 			-- List of updates
 			--apt_widget(),
@@ -135,7 +144,7 @@ local TopPanel = function(s)
         -- Old jira.televic.com query
 				-- query = 'jql=project=GENERAL AND sprint in openSprints() AND resolution = Unresolved AND ( assignee in (currentUser()) OR ( "reviewers" in (currentUser()))  ) ORDER BY updated DESC',
         -- New atlassian.net query
-        query = 'jql=project=GENERAL AND sprint in openSprints() AND ( assignee in (currentUser()) OR ( "reviewers" in (currentUser()))  ) AND status != Closed AND status != Done ORDER BY updated DESC'
+        query = 'jql=sprint in openSprints() AND ( assignee in (currentUser()) OR ( "reviewers" in (currentUser()))  ) AND status != Closed AND status != Done ORDER BY updated DESC'
 				--query = 'jql=project=THCS_GENERAL'
 			}),
 			-- docker widget

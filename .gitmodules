@@ -1,3 +1,6 @@
 [submodule "awesome-wm-widgets"]
 	path = awesome-wm-widgets
 	url = ./awesome-wm-widgets
+[submodule "widget/playerctl"]
+	path = widget/playerctl
+	url = https://github.com/dcfreire/awesomewm-playerctl

@@ -35,7 +35,7 @@ return {
      'flameshot',
      -- 'synology-drive -minimized',
      -- 'steam -silent',
-    'feh --randomize --bg-fill ~/.wallpapers/*',
+    'feh --randomize --bg-fill ~/.config/wallpapers/*',
     '/usr/bin/variety',
     -- 'google-chrome --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo',
     'teams-for-linux',

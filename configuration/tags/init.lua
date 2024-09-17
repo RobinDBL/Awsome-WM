@@ -10,12 +10,12 @@ local tags = {
     defaultApp = apps.default.browser,
     screen = 1
   },
-  {
-    icon = icons.code,
-    type = 'code',
-    defaultApp = apps.default.editor,
-    screen = 1
-  },
+  -- {
+  --   icon = icons.code,
+  --   type = 'code',
+  --   defaultApp = apps.default.editor,
+  --   screen = 1
+  -- },
   {
     icon = icons.terminal,
     type = 'terminal',
