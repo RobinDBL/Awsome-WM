@@ -11,7 +11,7 @@ return {
     terminal = 'alacritty',
     rofi = rofi_command,
     lock = 'betterlockscreen -l blur',
-    quake = 'konsole',
+    -- quake = 'konsole',
     screenshot = 'flameshot screen -p ~/Pictures',
     region_screenshot = 'flameshot gui -p ~/Pictures/screenshots --clipboard',
     delayed_screenshot = 'flameshot screen -p ~/Pictures -d 5000',

@@ -104,7 +104,7 @@ local TopPanel = function(s)
 			bg = beautiful.background.hue_900,
 
 			-- application list
-			--TaskList(s),
+			-- TaskList(s),
 			--add_button,
 		},
 		--wibox.container.place(nil, "center", "center", false, false, false, false, nil, nil, 0, false),
