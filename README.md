@@ -38,6 +38,12 @@ wget -qO- https://git.io/papirus-icon-theme-install | sh
 yay -S awesome rofi picom i3lock-fancy xclip ttf-roboto polkit-gnome materia-theme lxappearance flameshot pnmixer network-manager-applet xfce4-power-manager qt5-styleplugins papirus-icon-theme -y
 ```
 
+#### Red-Hat-Based
+```
+sudo dnf install awesome google-roboto-fonts rofi i3lock xclip qt5-qtstyleplugins materia-gtk-theme lxappearance xbacklight flameshot nautilus xfce4-power-manager pamixer network-manager-applet -y
+```
+TODO: Add compton
+
 #### Program list
 
 - [AwesomeWM](https://awesomewm.org/) as the window manager - universal package install: awesome
